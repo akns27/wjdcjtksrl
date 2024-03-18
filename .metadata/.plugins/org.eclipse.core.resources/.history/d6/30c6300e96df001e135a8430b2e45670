@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+header {
+	position: fixed;
+	top: 0;
+	width: 100vi;
+	height: 40px;
+	background-color: blue;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	font-size: 30px;
+}
+
+footer {
+	color: white;
+	position: fixed;
+	width: 100vi;
+	bottom: 0;
+	height: 30px;
+	font-size: 15px;
+	background-color: blue;
+}

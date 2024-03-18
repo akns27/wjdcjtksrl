@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%@page import="java.sql.*" %>
+<%@page import="DBPKG.Util" %>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>list</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<jsp:include page="header.jsp">
+  <jsp:param name="pageName" value="list" />
+</jsp:include>
+
+<section>
+
+<h2 style="text-align: center"><b>회원목록조회/수정</b></h2>
+
+<form action="list.jsp" method="post">
+
+<table>
+  <tr>
+    <th>회원번호</th>
+    <th>회원성명</th>
+    <th>전화번호</th>
+    <th>주소</th>
+    <th>가입일자</th>
+    <th>고객등급</th>
+    <th>거주지역</th>
+  </tr>
+  <%
+    Connection conn = null;
+    Statement stmt = null;
+    
+    try {
+    	conn = Util.getConnection();
+    	stmt = conn.createStatement();
+    	String sql = "select * from member_tbl_02 order by custno";
+    	stmt.executeQuery(sql);
+    	ResultSet rs = stmt.executeQuery(sql);
+    } catch(Exception e) {
+    	e.printStackTrace();
+    }
+    
+  %>
+
+
+
+
+  
+</table>
+
+</form>
+
+</section>
+
+<jsp:include page="footer.jsp" />
+
+</body>
+</html>

@@ -66,14 +66,13 @@
         }
   %>
     <tr>
-			<td><%=rs.getString("custno")%></td>
-			<td><%=rs.getString("custname")%></td>
-			<td><%=rs.getString("phone")%></td>
-			<td><%=rs.getString("address")%></td>
-			<td><%=rs.getString("joindate")%></td>
-			<td><%=gread%></td>
-			<td><%=rs.getString("city")%></td>
-	</tr>
+      <td><%= custno %></td>
+      <td><%= custname %></td>
+      <td><%= phone %></td>
+      <td><%= address %></td>
+      <td><%= joindate %></td>
+      <td><%= customerGrade %></td> <td><%= rs.getString("city") %></td>
+    </tr>
   <%
       }
     } catch (Exception e) {

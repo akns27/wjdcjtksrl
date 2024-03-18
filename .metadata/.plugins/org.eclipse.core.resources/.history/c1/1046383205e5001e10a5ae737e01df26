@@ -73,7 +73,7 @@
 			<td><%=rs.getString("joindate")%></td>
 			<td><%=gread%></td>
 			<td><%=rs.getString("city")%></td>
-	</tr>
+		</tr>
   <%
       }
     } catch (Exception e) {

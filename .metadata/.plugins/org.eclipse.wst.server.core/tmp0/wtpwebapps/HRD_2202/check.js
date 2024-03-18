@@ -1,4 +1,4 @@
-function joinCheck() {
+function validateJoinForm() {
 	if(document.frm.custname.value.length == 0){
 		alert("회원 성명이 입력되지 않았습니다.")
 		frm.custname.focus()
@@ -30,11 +30,11 @@ function joinCheck() {
 		return false
 	}
 	
-	sucess();
+	success();
 	return true;
-	
 }
 
-function sucess() {
-	alert("회원 등록이 완료 되었습니다.")
+function success() {
+	alert("회원 등록이 완료되었습니다.")
+	// 추가 작업을 수행할 수 있음 (예: 페이지 이동)
 }

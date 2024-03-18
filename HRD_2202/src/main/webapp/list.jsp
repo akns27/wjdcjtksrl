@@ -39,41 +39,41 @@
     try {
       conn = Util.getConnection();
       stmt = conn.createStatement();
-      String sql = "select * from member_tbl_02 order by custno";
+      String sql = "SELECT * FROM member_tbl_02 ORDER BY custno";
       rs = stmt.executeQuery(sql); // Execute query and store results
 
       while (rs.next()) {
-        String custno = rs.getString("custno");
-        String custname = rs.getString("custname");
-        String phone = rs.getString("phone");
-        String address = rs.getString("address");
-        String joindate = rs.getString("joindate");
-        String gread = rs.getString("gread");
+    	    String custno = rs.getString("custno");
+    	    String custname = rs.getString("custname");
+    	    String phone = rs.getString("phone");
+    	    String address = rs.getString("address");
+    	    String joindate = rs.getString("indate"); // joindate 대신 indate 사용
+    	    String gread = rs.getString("gread");
 
-        String customerGrade = "";
-        switch (gread) {
-          case "A":
-            customerGrade = "VIP";
-            break;
-          case "B":
-            customerGrade = "일반";
-            break;
-          case "C":
-            customerGrade = "직원";
-            break;
-          default:
-            customerGrade = gread; // Handle cases not explicitly defined
-        }
-  %>
-    <tr>
-			<td><%=rs.getString("custno")%></td>
-			<td><%=rs.getString("custname")%></td>
-			<td><%=rs.getString("phone")%></td>
-			<td><%=rs.getString("address")%></td>
-			<td><%=rs.getString("joindate")%></td>
-			<td><%=gread%></td>
-			<td><%=rs.getString("city")%></td>
-	</tr>
+    	    String customerGrade = "";
+    	    switch (gread) {
+    	        case "A":
+    	            customerGrade = "VIP";
+    	            break;
+    	        case "B":
+    	            customerGrade = "일반";
+    	            break;
+    	        case "C":
+    	            customerGrade = "직원";
+    	            break;
+    	        default:
+    	            customerGrade = gread;
+    	    }
+    	%>
+    	<tr>
+    	    <td><%=custno%></td> <!-- rs.getString("custno") 대신 변수 custno 사용 -->
+    	    <td><%=custname%></td> <!-- rs.getString("custname") 대신 변수 custname 사용 -->
+    	    <td><%=phone%></td> <!-- rs.getString("phone") 대신 변수 phone 사용 -->
+    	    <td><%=address%></td> <!-- rs.getString("address") 대신 변수 address 사용 -->
+    	    <td><%=joindate%></td> <!-- rs.getString("indate") 대신 변수 joindate 사용 -->
+    	    <td><%=customerGrade%></td> <!-- gread 대신 customerGrade 사용 -->
+    	    <td><%=rs.getString("city")%></td>
+    	</tr>
   <%
       }
     } catch (Exception e) {
